@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django and MailerSend</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            text-align: center;
+        }
+        .text-input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #fb8500;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .message {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #fb8500; 
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>I'd like to receive a motivational quote!</h2>
+        <form action="{% url 'send-email' %}" method="post">
+            {% csrf_token %}
+            <input type="text" class="text-input" name="textbox_name" placeholder="Enter email here">
+            <br>
+            <button type="submit" class="submit-button">Surprise me!</button>
+            <br>
+            <p class="message">{{ message }}</p>
+        </form>
+    </div>
+</body>
+</html>
