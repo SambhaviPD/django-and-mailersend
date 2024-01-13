@@ -10,13 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from dotenv import load_dotenv
 from pathlib import Path
 
 import os
 
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print('BASE_DIR: ', BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "anymail",
 ]
 
 MIDDLEWARE = [
@@ -124,3 +127,12 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# MailerSend
+ANYMAIL = {
+    'MAILERSEND_API_TOKEN': os.environ.get("MAILERSEND_API_TOKEN"),
+    "MAILERSEND_SENDER_DOMAIN": 'usewobu.com'
+}
+EMAIL_BACKEND = "anymail.backends.mailersend.EmailBackend"
+# The id used for sending emails
+DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")

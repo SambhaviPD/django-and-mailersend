@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            color: #444;
+        }
+        .quote {
+            font-style: italic;
+            color: #555;
+            padding: 20px;
+            border-left: 3px solid #007bff;
+        }
+        .author {
+            text-align: right;
+            color: #555;
+            padding: 10px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Your Daily Dose of Inspiration</h1>
+        </div>
+        <div class="quote">
+            "{{ quote_text }}"
+        </div>
+        <div class="author">
+            - {{ quote_author }}
+        </div>
+        <div class="footer">
+            <p>Stay inspired!</p>
+        </div>
+    </div>
+</body>
+</html>

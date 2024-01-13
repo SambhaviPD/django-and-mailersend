@@ -47,7 +47,7 @@
         <h2>I'd like to receive a motivational quote!</h2>
         <form action="{% url 'send-email' %}" method="post">
             {% csrf_token %}
-            <input type="text" class="text-input" name="textbox_name" placeholder="Enter email here">
+            <input type="text" class="text-input" name="email" placeholder="Enter email here">
             <br>
             <button type="submit" class="submit-button">Surprise me!</button>
             <br>
