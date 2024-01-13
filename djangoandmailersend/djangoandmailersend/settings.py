@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-c7#kng(3u6*e&1!h5&(lpyycz73jh2!2kz@&hmjh0l8^+wfn*7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["email-quote-using-django-and-mailersend.onrender.com", "localhost",]
 
 
 # Application definition
